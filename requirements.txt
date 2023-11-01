@@ -10,7 +10,7 @@ colorama==0.4.6
 conllu==4.5.3
 
 
-flair==0.13.0
+
 flask==3.0.0
 fonttools==4.43.1
 fsspec==2023.10.0
