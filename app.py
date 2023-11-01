@@ -8,7 +8,7 @@ polyfuzz = PolyFuzz()
 
 @app.route('/')
 def home ():
-    return "Welcome to Fuzzy Logic API"
+    return "Welcome to Fuzzy Logic API created by Arun"
 
 @app.route('/Fuzzylogic', methods = ['POST'])
 def FuzzyStringCheck():
@@ -37,8 +37,8 @@ def FuzzyStringCheck():
                      model = PolyFuzz("EditDistance") 
                 if (modelNumber=="3"):
                     model = PolyFuzz("Embeddings") 
-                else:
-                   return  jsonify({"Message":"Incorrect Model Number"})
+                #else:
+                 #  return  jsonify({"Message":"Incorrect Model Number"})
                 model.match(from_list, to_list)
                 result = model.get_matches()["Similarity"].values[0]
                 return  jsonify({"Percentage":result})
