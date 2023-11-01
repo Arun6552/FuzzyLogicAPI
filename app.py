@@ -33,11 +33,11 @@ def FuzzyStringCheck():
             if from_list is not None:
                 model1 = PolyFuzz("TF-IDF")
                 model1.match(from_list, to_list)
-                result1 = model.get_matches()["Similarity"].values[0]
+                result1 = model1.get_matches()["Similarity"].values[0]
                 
                 model2 = PolyFuzz("EditDistance") 
                 model2.match(from_list, to_list)
-                result2 = model.get_matches()["Similarity"].values[0]
+                result2 = model2.get_matches()["Similarity"].values[0]
                 return  jsonify({"Model_Alog":"TF-IDF","Percentage":result1,"Model_Alog":"EditDistance","Percentage":result2})
             
         except Exception as e:
