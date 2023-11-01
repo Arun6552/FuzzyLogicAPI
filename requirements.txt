@@ -18,3 +18,4 @@ fonttools==4.37.4
 numpy==1.21.5
 
 polyfuzz==0.4.2
+gunicorn==19.7.1
