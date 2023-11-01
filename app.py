@@ -37,6 +37,8 @@ def FuzzyStringCheck():
                      model = PolyFuzz("EditDistance") 
                 if (modelNumber=="3"):
                     model = PolyFuzz("Embeddings") 
+                else:
+                    model = PolyFuzz("TF-IDF")
                 #else:
                  #  return  jsonify({"Message":"Incorrect Model Number"})
                 model.match(from_list, to_list)
