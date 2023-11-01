@@ -31,19 +31,14 @@ def FuzzyStringCheck():
             print(from_list,to_list)
 
             if from_list is not None:
-                if (modelNumber =="1"):
-                    model = PolyFuzz("TF-IDF")
-                if (modelNumber =="2"):
-                     model = PolyFuzz("EditDistance") 
-                if (modelNumber=="3"):
-                    model = PolyFuzz("Embeddings") 
-                else:
-                    model = PolyFuzz("TF-IDF")
-                #else:
-                 #  return  jsonify({"Message":"Incorrect Model Number"})
-                model.match(from_list, to_list)
-                result = model.get_matches()["Similarity"].values[0]
-                return  jsonify({"Percentage":result})
+                model1 = PolyFuzz("TF-IDF")
+                model1.match(from_list, to_list)
+                result1 = model.get_matches()["Similarity"].values[0]
+                
+                model2 = PolyFuzz("EditDistance") 
+                model2.match(from_list, to_list)
+                result2 = model.get_matches()["Similarity"].values[0]
+                return  jsonify({"Model_Alog":"TF-IDF","Percentage":result1,"Model_Alog":"EditDistance","Percentage":result2})
             
         except Exception as e:
             return "Interval Server Error :" + str(e),500
