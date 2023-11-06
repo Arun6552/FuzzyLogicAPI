@@ -8,6 +8,9 @@ charset-normalizer==3.3.1
 click==8.1.7
 colorama==0.4.6
 conllu==4.5.3
+jaro-winkler==2.0.3
+Levenshtein==0.21.1
+thefuzz==0.19.0
 
 
 
